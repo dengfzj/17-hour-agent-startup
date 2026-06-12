@@ -1,0 +1,774 @@
+{
+  "business": {
+    "id": "org_evergreen",
+    "name": "Evergreen Home Services",
+    "industry": "Home repair and maintenance",
+    "city": "Austin",
+    "state": "TX",
+    "website": "https://evergreen.example",
+    "currency": "USD",
+    "averageDealSize": 1850,
+    "grossMargin": 0.42,
+    "monthlyLeadGoal": 72,
+    "monthlyReviewGoal": 45,
+    "brandVoice": "warm"
+  },
+  "customers": [
+    {
+      "id": "cust_maria",
+      "name": "Maria Lopez",
+      "email": "maria@example.com",
+      "phone": "+1 512 555 0140",
+      "source": "Google Business Profile",
+      "tags": [
+        "homeowner",
+        "repeat"
+      ],
+      "consentEmail": true,
+      "consentSms": true,
+      "lifetimeValue": 4280,
+      "lastInteractionAt": "2026-06-10T14:28:05.910Z"
+    },
+    {
+      "id": "cust_bryce",
+      "name": "Bryce Carter",
+      "email": "bryce@example.com",
+      "phone": "+1 512 555 0182",
+      "source": "Referral",
+      "tags": [
+        "commercial",
+        "high-intent"
+      ],
+      "consentEmail": true,
+      "consentSms": false,
+      "lifetimeValue": 890,
+      "lastInteractionAt": "2026-06-07T12:29:15.159Z"
+    },
+    {
+      "id": "cust_anya",
+      "name": "Anya Patel",
+      "email": "anya@example.com",
+      "phone": "+1 512 555 0199",
+      "source": "Website form",
+      "tags": [
+        "first-time",
+        "review-risk"
+      ],
+      "consentEmail": true,
+      "consentSms": true,
+      "lifetimeValue": 620,
+      "lastInteractionAt": "2026-06-09T12:29:15.159Z"
+    },
+    {
+      "id": "cust_dan",
+      "name": "Dan Kim",
+      "email": "dan@example.com",
+      "phone": "+1 512 555 0108",
+      "source": "Seasonal campaign",
+      "tags": [
+        "maintenance-plan"
+      ],
+      "consentEmail": true,
+      "consentSms": true,
+      "lifetimeValue": 3150,
+      "lastInteractionAt": "2026-04-05T12:29:15.159Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "serviceCategory": "Storm roof repair",
+      "description": "Water is coming through the ceiling near the guest bedroom after last night storm. Customer wants a temporary patch today and a full estimate for permanent repair.",
+      "budgetMin": 1200,
+      "budgetMax": 5200,
+      "urgency": "emergency",
+      "source": "phone",
+      "status": "qualified",
+      "createdAt": "2026-06-10T12:29:15.159Z",
+      "locationFit": true,
+      "repeatCustomer": true,
+      "score": 100,
+      "nextStep": "Call within 5 minutes and send a premium estimate today."
+    },
+    {
+      "id": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "serviceCategory": "Office maintenance refresh",
+      "description": "Small office needs drywall repair, paint touch-up, fixture replacement, and weekend scheduling before a tenant walkthrough next month.",
+      "budgetMin": 2500,
+      "budgetMax": 6800,
+      "urgency": "high",
+      "source": "referral",
+      "status": "quoted",
+      "createdAt": "2026-06-08T12:29:15.159Z",
+      "locationFit": true,
+      "repeatCustomer": false,
+      "score": 100,
+      "nextStep": "Call within 5 minutes and send a premium estimate today."
+    },
+    {
+      "id": "lead_patio",
+      "customerId": "cust_dan",
+      "serviceCategory": "Seasonal patio repair",
+      "description": "Customer wants a spring patio inspection, loose board repair, and maintenance plan quote before hosting guests.",
+      "budgetMin": 600,
+      "budgetMax": 1600,
+      "urgency": "normal",
+      "source": "website",
+      "status": "new",
+      "createdAt": "2026-06-05T12:29:15.159Z",
+      "locationFit": true,
+      "repeatCustomer": true,
+      "score": 53,
+      "nextStep": "Send a discovery note and move into a nurture sequence."
+    }
+  ],
+  "estimates": [
+    {
+      "id": "estimate_qyib8spmah",
+      "leadId": "lead_roof_urgent",
+      "status": "draft",
+      "validUntil": "2026-06-24T12:29:15.161Z",
+      "lineItems": [
+        {
+          "id": "line_5g0fzlpmah",
+          "name": "Storm roof repair labor",
+          "description": "Crew time, preparation, field execution, and cleanup.",
+          "quantity": 1,
+          "unit": "project",
+          "unitPrice": 1987,
+          "taxable": false
+        },
+        {
+          "id": "line_vlovlbpmah",
+          "name": "Materials and supplies",
+          "description": "Standard materials, transport, and consumables.",
+          "quantity": 1,
+          "unit": "allowance",
+          "unitPrice": 704,
+          "taxable": true
+        },
+        {
+          "id": "line_9856erpmah",
+          "name": "Project coordination",
+          "description": "Scheduling, customer updates, quality check, and closeout notes.",
+          "quantity": 1,
+          "unit": "fixed",
+          "unitPrice": 320,
+          "taxable": false
+        }
+      ],
+      "subtotal": 3011,
+      "tax": 58,
+      "total": 3069,
+      "confidence": "high"
+    },
+    {
+      "id": "estimate_czl55ppmah",
+      "leadId": "lead_office_refresh",
+      "status": "draft",
+      "validUntil": "2026-06-24T12:29:15.161Z",
+      "lineItems": [
+        {
+          "id": "line_aqv9u3pmah",
+          "name": "Office maintenance refresh labor",
+          "description": "Crew time, preparation, field execution, and cleanup.",
+          "quantity": 1,
+          "unit": "project",
+          "unitPrice": 2524,
+          "taxable": false
+        },
+        {
+          "id": "line_ntgvuvpmah",
+          "name": "Materials and supplies",
+          "description": "Standard materials, transport, and consumables.",
+          "quantity": 1,
+          "unit": "allowance",
+          "unitPrice": 1023,
+          "taxable": true
+        },
+        {
+          "id": "line_no4984pmah",
+          "name": "Project coordination",
+          "description": "Scheduling, customer updates, quality check, and closeout notes.",
+          "quantity": 1,
+          "unit": "fixed",
+          "unitPrice": 465,
+          "taxable": false
+        }
+      ],
+      "subtotal": 4012,
+      "tax": 84,
+      "total": 4096,
+      "confidence": "medium"
+    },
+    {
+      "id": "estimate_d9tatmpmah",
+      "leadId": "lead_patio",
+      "status": "draft",
+      "validUntil": "2026-06-24T12:29:15.161Z",
+      "lineItems": [
+        {
+          "id": "line_qnj38apmah",
+          "name": "Seasonal patio repair labor",
+          "description": "Crew time, preparation, field execution, and cleanup.",
+          "quantity": 1,
+          "unit": "project",
+          "unitPrice": 506,
+          "taxable": false
+        },
+        {
+          "id": "line_phjtocpmah",
+          "name": "Materials and supplies",
+          "description": "Standard materials, transport, and consumables.",
+          "quantity": 1,
+          "unit": "allowance",
+          "unitPrice": 242,
+          "taxable": true
+        },
+        {
+          "id": "line_3sj76spmah",
+          "name": "Project coordination",
+          "description": "Scheduling, customer updates, quality check, and closeout notes.",
+          "quantity": 1,
+          "unit": "fixed",
+          "unitPrice": 180,
+          "taxable": false
+        }
+      ],
+      "subtotal": 928,
+      "tax": 20,
+      "total": 948,
+      "confidence": "medium"
+    }
+  ],
+  "proposals": [
+    {
+      "id": "proposal_xeoc48pmah",
+      "leadId": "lead_roof_urgent",
+      "estimateId": "estimate_qyib8spmah",
+      "title": "Evergreen Home Services proposal for Maria Lopez",
+      "problemSummary": "Maria Lopez needs a reliable storm roof repair solution in Austin with emergency urgency. The request mentions: Water is coming through the ceiling near the guest bedroom after last night storm. Customer wants a temporary patch today and a full estimate for permanent repair.",
+      "recommendedSolution": "We recommend a scoped storm roof repair package priced at $3,069, with the final price confirmed after field validation.",
+      "scopeOfWork": [
+        "Confirm site details, constraints, and customer priorities before work begins.",
+        "Prepare crew, materials, and project schedule based on the approved estimate.",
+        "Complete the work with progress updates and a closeout quality check.",
+        "Send completion notes, care instructions, and a review request when appropriate."
+      ],
+      "timeline": "Priority scheduling: first available emergency slot after approval.",
+      "warrantyTerms": "Workmanship is covered for 30 days unless the final signed estimate states otherwise.",
+      "exclusions": [
+        "Hidden structural issues, permit fees, and customer-requested scope changes are excluded.",
+        "No final price is guaranteed until the customer approves the written estimate."
+      ],
+      "closingNote": "Reply to approve the estimate or call Evergreen Home Services to reserve the next available service window.",
+      "status": "draft",
+      "generatedAt": "2026-06-10T12:29:15.162Z"
+    },
+    {
+      "id": "proposal_ksi4c0pmai",
+      "leadId": "lead_office_refresh",
+      "estimateId": "estimate_czl55ppmah",
+      "title": "Evergreen Home Services proposal for Bryce Carter",
+      "problemSummary": "Bryce Carter needs a reliable office maintenance refresh solution in Austin with high urgency. The request mentions: Small office needs drywall repair, paint touch-up, fixture replacement, and weekend scheduling before a tenant walkthrough next month.",
+      "recommendedSolution": "We recommend a scoped office maintenance refresh package priced at $4,096, with the final price confirmed after field validation.",
+      "scopeOfWork": [
+        "Confirm site details, constraints, and customer priorities before work begins.",
+        "Prepare crew, materials, and project schedule based on the approved estimate.",
+        "Complete the work with progress updates and a closeout quality check.",
+        "Send completion notes, care instructions, and a review request when appropriate."
+      ],
+      "timeline": "Standard scheduling: 3-7 business days after approval, subject to route availability.",
+      "warrantyTerms": "Workmanship is covered for 30 days unless the final signed estimate states otherwise.",
+      "exclusions": [
+        "Hidden structural issues, permit fees, and customer-requested scope changes are excluded.",
+        "No final price is guaranteed until the customer approves the written estimate."
+      ],
+      "closingNote": "Reply to approve the estimate or call Evergreen Home Services to reserve the next available service window.",
+      "status": "draft",
+      "generatedAt": "2026-06-10T12:29:15.162Z"
+    },
+    {
+      "id": "proposal_38ruknpmai",
+      "leadId": "lead_patio",
+      "estimateId": "estimate_d9tatmpmah",
+      "title": "Evergreen Home Services proposal for Dan Kim",
+      "problemSummary": "Dan Kim needs a reliable seasonal patio repair solution in Austin with normal urgency. The request mentions: Customer wants a spring patio inspection, loose board repair, and maintenance plan quote before hosting guests.",
+      "recommendedSolution": "We recommend a scoped seasonal patio repair package priced at $948, with the final price confirmed after field validation.",
+      "scopeOfWork": [
+        "Confirm site details, constraints, and customer priorities before work begins.",
+        "Prepare crew, materials, and project schedule based on the approved estimate.",
+        "Complete the work with progress updates and a closeout quality check.",
+        "Send completion notes, care instructions, and a review request when appropriate."
+      ],
+      "timeline": "Standard scheduling: 3-7 business days after approval, subject to route availability.",
+      "warrantyTerms": "Workmanship is covered for 30 days unless the final signed estimate states otherwise.",
+      "exclusions": [
+        "Hidden structural issues, permit fees, and customer-requested scope changes are excluded.",
+        "No final price is guaranteed until the customer approves the written estimate."
+      ],
+      "closingNote": "Reply to approve the estimate or call Evergreen Home Services to reserve the next available service window.",
+      "status": "draft",
+      "generatedAt": "2026-06-10T12:29:15.162Z"
+    }
+  ],
+  "followUps": [
+    {
+      "id": "follow_ncckl6pmai",
+      "leadId": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "channel": "email",
+      "scheduledAt": "2026-06-10T12:29:15.162Z",
+      "status": "scheduled",
+      "subject": "Your estimate is ready",
+      "body": "Hi Maria Lopez, your storm roof repair estimate is $3,069. Reply with any questions or approval details.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_lxsdw5pmai",
+      "leadId": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "channel": "sms",
+      "scheduledAt": "2026-06-11T12:29:15.162Z",
+      "status": "scheduled",
+      "subject": "Any questions about the estimate?",
+      "body": "Hi Maria Lopez, checking in on the storm roof repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_1ul0yvpmaj",
+      "leadId": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "channel": "sms",
+      "scheduledAt": "2026-06-13T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "A quick note on timing",
+      "body": "Hi Maria Lopez, checking in on the storm roof repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_kuw405pmaj",
+      "leadId": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "channel": "sms",
+      "scheduledAt": "2026-06-17T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Estimate window reminder",
+      "body": "Hi Maria Lopez, checking in on the storm roof repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_wx6xbipmaj",
+      "leadId": "lead_roof_urgent",
+      "customerId": "cust_maria",
+      "channel": "phone",
+      "scheduledAt": "2026-06-24T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Should we keep this open?",
+      "body": "Hi Maria Lopez, checking in on the storm roof repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_zm3addpmaj",
+      "leadId": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "channel": "email",
+      "scheduledAt": "2026-06-10T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Your estimate is ready",
+      "body": "Hi Bryce Carter, your office maintenance refresh estimate is $4,096. Reply with any questions or approval details.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_uxcrzdpmaj",
+      "leadId": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "channel": "sms",
+      "scheduledAt": "2026-06-11T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Any questions about the estimate?",
+      "body": "Hi Bryce Carter, checking in on the office maintenance refresh estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_yderispmaj",
+      "leadId": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "channel": "sms",
+      "scheduledAt": "2026-06-13T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "A quick note on timing",
+      "body": "Hi Bryce Carter, checking in on the office maintenance refresh estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_i8f81qpmaj",
+      "leadId": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "channel": "sms",
+      "scheduledAt": "2026-06-17T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Estimate window reminder",
+      "body": "Hi Bryce Carter, checking in on the office maintenance refresh estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_nk4nhypmaj",
+      "leadId": "lead_office_refresh",
+      "customerId": "cust_bryce",
+      "channel": "phone",
+      "scheduledAt": "2026-06-24T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Should we keep this open?",
+      "body": "Hi Bryce Carter, checking in on the office maintenance refresh estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_ng7030pmaj",
+      "leadId": "lead_patio",
+      "customerId": "cust_dan",
+      "channel": "email",
+      "scheduledAt": "2026-06-10T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Your estimate is ready",
+      "body": "Hi Dan Kim, your seasonal patio repair estimate is $948. Reply with any questions or approval details.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_w3tvadpmaj",
+      "leadId": "lead_patio",
+      "customerId": "cust_dan",
+      "channel": "sms",
+      "scheduledAt": "2026-06-11T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Any questions about the estimate?",
+      "body": "Hi Dan Kim, checking in on the seasonal patio repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_mk449npmaj",
+      "leadId": "lead_patio",
+      "customerId": "cust_dan",
+      "channel": "sms",
+      "scheduledAt": "2026-06-13T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "A quick note on timing",
+      "body": "Hi Dan Kim, checking in on the seasonal patio repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_idof5dpmaj",
+      "leadId": "lead_patio",
+      "customerId": "cust_dan",
+      "channel": "sms",
+      "scheduledAt": "2026-06-17T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Estimate window reminder",
+      "body": "Hi Dan Kim, checking in on the seasonal patio repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    },
+    {
+      "id": "follow_4ievt1pmaj",
+      "leadId": "lead_patio",
+      "customerId": "cust_dan",
+      "channel": "phone",
+      "scheduledAt": "2026-06-24T12:29:15.163Z",
+      "status": "scheduled",
+      "subject": "Should we keep this open?",
+      "body": "Hi Dan Kim, checking in on the seasonal patio repair estimate. We can hold the current pricing until Jun 24.",
+      "outcome": "pending"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev_maria",
+      "customerId": "cust_maria",
+      "platform": "google",
+      "rating": 5,
+      "body": "Fast roof patch after the storm. The crew explained the permanent repair options clearly.",
+      "reviewerName": "Maria L.",
+      "reviewedAt": "2026-06-06T12:29:15.159Z",
+      "riskScore": 0,
+      "sentimentScore": 78,
+      "status": "new",
+      "riskTerms": []
+    },
+    {
+      "id": "rev_anya",
+      "customerId": "cust_anya",
+      "platform": "google",
+      "rating": 2,
+      "body": "The technician was late, the invoice was expensive, and nobody replied when I asked for a refund. I may call my attorney.",
+      "reviewerName": "Anya P.",
+      "reviewedAt": "2026-06-09T12:29:15.159Z",
+      "riskScore": 84,
+      "sentimentScore": -36,
+      "status": "escalated",
+      "riskTerms": [
+        "attorney",
+        "refund",
+        "late",
+        "expensive"
+      ]
+    },
+    {
+      "id": "rev_dan",
+      "customerId": "cust_dan",
+      "platform": "facebook",
+      "rating": 4,
+      "body": "Reliable seasonal maintenance. Scheduling could be a little faster, but the work has always been professional.",
+      "reviewerName": "Dan K.",
+      "reviewedAt": "2026-05-19T12:29:15.159Z",
+      "riskScore": 14,
+      "sentimentScore": 26,
+      "status": "new",
+      "riskTerms": []
+    }
+  ],
+  "reviewResponses": [
+    {
+      "id": "response_fvm2i9pmak",
+      "reviewId": "rev_maria",
+      "tone": "warm",
+      "body": "Maria Lopez, thank you for choosing Evergreen Home Services. We appreciate the kind words and are glad the team delivered a strong experience.",
+      "status": "draft",
+      "complianceNotes": [
+        "No private service details included.",
+        "No admission of legal liability.",
+        "No incentive offered for changing or posting a review."
+      ],
+      "generatedAt": "2026-06-10T12:29:15.164Z"
+    },
+    {
+      "id": "response_opw9zipmak",
+      "reviewId": "rev_anya",
+      "tone": "apologetic",
+      "body": "Anya Patel, thank you for raising this. We are sorry your experience did not meet expectations. We cannot discuss account details publicly, but our manager would like to review this directly. Please contact Evergreen Home Services so we can look into the situation and decide the right next step.",
+      "status": "draft",
+      "complianceNotes": [
+        "Manager approval required before posting.",
+        "No private service details included.",
+        "No admission of legal liability.",
+        "No incentive offered for changing or posting a review."
+      ],
+      "generatedAt": "2026-06-10T12:29:15.164Z"
+    },
+    {
+      "id": "response_ilgsg6pmak",
+      "reviewId": "rev_dan",
+      "tone": "warm",
+      "body": "Dan Kim, thank you for choosing Evergreen Home Services. We appreciate the kind words and are glad the team delivered a strong experience.",
+      "status": "draft",
+      "complianceNotes": [
+        "No private service details included.",
+        "No admission of legal liability.",
+        "No incentive offered for changing or posting a review."
+      ],
+      "generatedAt": "2026-06-10T12:29:15.164Z"
+    }
+  ],
+  "feedbackCases": [
+    {
+      "id": "case_jx90yepmak",
+      "customerId": "cust_anya",
+      "reviewId": "rev_anya",
+      "severity": "high",
+      "reasonCategory": "service_recovery",
+      "summary": "Anya Patel left a 2-star google review. Risk score: 84.",
+      "status": "open",
+      "openedAt": "2026-06-10T12:29:15.164Z",
+      "winbackScore": 15
+    }
+  ],
+  "recoveryOffers": [
+    {
+      "id": "offer_5n24n5pmak",
+      "feedbackCaseId": "case_jx90yepmak",
+      "offerType": "coupon",
+      "value": 35,
+      "message": "Anya Patel, we appreciate the chance to make this right. Use this $35 service credit on your next booking this month.",
+      "expiresAt": "2026-07-01T12:29:15.164Z",
+      "status": "draft"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": "camp_review_boost",
+      "name": "Post-service review lift",
+      "type": "review_request",
+      "channel": "mixed",
+      "status": "active",
+      "audienceSize": 38,
+      "projectedRevenue": 5624,
+      "conversionRate": 0.08,
+      "createdAt": "2026-06-04T12:29:15.159Z"
+    },
+    {
+      "id": "camp_spring_winback",
+      "name": "Dormant homeowner winback",
+      "type": "winback",
+      "channel": "email",
+      "status": "draft",
+      "audienceSize": 114,
+      "projectedRevenue": 9491,
+      "conversionRate": 0.045,
+      "createdAt": "2026-06-10T12:29:15.159Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "audit_mq85ygeu",
+      "actor": "API",
+      "action": "sms_consent_update",
+      "entityType": "customer",
+      "entityId": "cust_maria",
+      "summary": "SMS consent resubscribe via Twilio inbound.",
+      "createdAt": "2026-06-10T14:28:05.910Z"
+    },
+    {
+      "id": "audit_mq85xu4y",
+      "actor": "API",
+      "action": "sms_consent_update",
+      "entityType": "customer",
+      "entityId": "cust_maria",
+      "summary": "SMS consent unsubscribe via Twilio inbound.",
+      "createdAt": "2026-06-10T14:27:37.042Z"
+    },
+    {
+      "id": "audit_mq8588wu",
+      "actor": "API",
+      "action": "message_send_attempt",
+      "entityType": "outbound_message",
+      "entityId": "msg_mq8588wu_cgd34z",
+      "summary": "Message failed via none.",
+      "createdAt": "2026-06-10T14:07:43.134Z"
+    },
+    {
+      "id": "audit_research",
+      "actor": "Research pod",
+      "action": "selected_directions",
+      "entityType": "portfolio",
+      "entityId": "two_products",
+      "summary": "Selected BidFlow Local and ReputeLoop after trend, demand, and risk review.",
+      "createdAt": "2026-06-10T12:29:15.159Z"
+    }
+  ],
+  "researchSources": [
+    {
+      "title": "Gartner forecasts worldwide IT spending to grow in 2026",
+      "publisher": "Gartner",
+      "date": "2026-02-03",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-02-03-gartner-forecasts-worldwide-it-spending-to-grow-10-point-8-percent-in-2026-totaling-6-point-15-trillion-dollars",
+      "note": "Software and AI budget growth supports paid B2B workflow products."
+    },
+    {
+      "title": "QuickBooks AI Impact Report",
+      "publisher": "Intuit QuickBooks",
+      "date": "2026-05",
+      "url": "https://quickbooks.intuit.com/r/small-business-data/ai-impact-report/",
+      "note": "SMBs use AI for marketing, service, and data work, but need trusted narrow tools."
+    },
+    {
+      "title": "Local Consumer Review Survey",
+      "publisher": "BrightLocal",
+      "date": "2026",
+      "url": "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      "note": "Local buyers rely heavily on Google reviews, creating direct ROI for review operations."
+    },
+    {
+      "title": "FTC final rule banning fake reviews and testimonials",
+      "publisher": "FTC",
+      "date": "2024-08-14",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials",
+      "note": "Defines compliance constraints for review workflows; product avoids gating and incentives."
+    },
+    {
+      "title": "Loopio research on RFP teams and GenAI adoption",
+      "publisher": "Loopio / BusinessWire",
+      "date": "2026-03-11",
+      "url": "https://www.businesswire.com/news/home/20260311267176/en/New-Loopio-Research-Finds-AI-Adoption-and-Leadership-Expectations-Are-Climbing-as-RFP-Revenue-Influence-Reaches-a-Five-Year-High",
+      "note": "RFP and proposal work is moving toward AI-assisted revenue operations."
+    }
+  ],
+  "directions": [
+    {
+      "id": "dir_bidflow",
+      "name": "BidFlow Local",
+      "productKey": "bidflow",
+      "marketScore": 4,
+      "willingnessToPayScore": 4,
+      "buildComplexityScore": 5,
+      "complianceScore": 5,
+      "acquisitionScore": 4,
+      "sevenDayLaunchScore": 5,
+      "ceilingScore": 3,
+      "weightedScore": 83,
+      "targetCustomers": "Local service businesses: contractors, repair teams, cleaning, field services, boutique B2B service firms.",
+      "priceAnchor": "$49-$299/month plus optional setup; replaces spreadsheet quoting and missed follow-up labor.",
+      "whyNow": "SMBs are adopting narrow AI workflows and need revenue tools that turn leads into approved estimates faster.",
+      "risks": [
+        "Service pricing varies by location and job conditions.",
+        "Needs human approval before binding quotes.",
+        "Vertical templates must be specific to win trust."
+      ]
+    },
+    {
+      "id": "dir_reputeloop",
+      "name": "ReputeLoop",
+      "productKey": "reputeloop",
+      "marketScore": 4,
+      "willingnessToPayScore": 4,
+      "buildComplexityScore": 4,
+      "complianceScore": 4,
+      "acquisitionScore": 3,
+      "sevenDayLaunchScore": 4,
+      "ceilingScore": 3,
+      "weightedScore": 75,
+      "targetCustomers": "Local businesses with review-driven demand: home services, clinics, beauty, restaurants, repair, fitness.",
+      "priceAnchor": "$39-$199/month; lower than Podium/Birdeye while covering review response, risk handling, and winback.",
+      "whyNow": "Reviews are a direct buying signal, while fake-review enforcement makes compliant workflows more valuable.",
+      "risks": [
+        "Must not generate fake reviews or review gating.",
+        "SMS/email consent and unsubscribe must be respected.",
+        "Platform integrations can change."
+      ]
+    }
+  ],
+  "outboundMessages": [
+    {
+      "id": "msg_mq8588wu_cgd34z",
+      "customerId": "cust_maria",
+      "channel": "email",
+      "purpose": "follow_up",
+      "subject": "Your quote",
+      "body": "Your quote is ready.",
+      "status": "failed",
+      "failureReason": "email_not_configured",
+      "consentCheckedAt": "2026-06-10T14:07:43.134Z",
+      "createdAt": "2026-06-10T14:07:43.134Z"
+    }
+  ],
+  "subscriptions": [],
+  "consentEvents": [
+    {
+      "id": "consent_mq85ygeu_1fra6y",
+      "customerId": "cust_maria",
+      "channel": "sms",
+      "action": "resubscribe",
+      "source": "twilio",
+      "rawValue": "START",
+      "createdAt": "2026-06-10T14:28:05.910Z"
+    },
+    {
+      "id": "consent_mq85xu4y_bwgb7d",
+      "customerId": "cust_maria",
+      "channel": "sms",
+      "action": "unsubscribe",
+      "source": "twilio",
+      "rawValue": "STOP",
+      "createdAt": "2026-06-10T14:27:37.042Z"
+    }
+  ]
+}

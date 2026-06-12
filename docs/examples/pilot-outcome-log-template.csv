@@ -1,0 +1,2 @@
+date,business_name,product,plan,setup_revenue,mrr,onboarding_status,materials_status,records_imported,first_pack_sent,outcome_type,outcome_value,next_action,owner
+2026-06-11,Austin Roof & Repair,bidflow,bidflow-growth,499,149,ready_for_pilot,imported,20,true,won_job,1800,"ask for renewal and case study",operator@example.com

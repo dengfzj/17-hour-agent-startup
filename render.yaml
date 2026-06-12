@@ -1,0 +1,85 @@
+services:
+  - type: web
+    name: local-growth-os
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SERVE_STATIC_FRONTEND
+        value: "true"
+      - key: PORT
+        value: 10000
+      - key: WORKSPACE_ID
+        value: local-growth-os
+      - key: PUBLIC_API_BASE_URL
+        sync: false
+      - key: APP_ORIGIN
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: local-growth-os-db
+          property: connectionString
+      - key: JWT_PUBLIC_KEY
+        sync: false
+      - key: JWT_ALGORITHM
+        value: RS256
+      - key: JWT_ISSUER
+        sync: false
+      - key: JWT_AUDIENCE
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PRICE_BIDFLOW_STARTER
+        sync: false
+      - key: STRIPE_PRICE_BIDFLOW_GROWTH
+        sync: false
+      - key: STRIPE_PRICE_BIDFLOW_PRO
+        sync: false
+      - key: STRIPE_PRICE_REPUTELOOP_STARTER
+        sync: false
+      - key: STRIPE_PRICE_REPUTELOOP_GROWTH
+        sync: false
+      - key: STRIPE_PRICE_REPUTELOOP_PRO
+        sync: false
+      - key: POSTMARK_TOKEN
+        sync: false
+      - key: POSTMARK_FROM_EMAIL
+        sync: false
+      - key: POSTMARK_MESSAGE_STREAM
+        value: outbound
+      - key: SENDGRID_API_KEY
+        sync: false
+      - key: SENDGRID_FROM_EMAIL
+        sync: false
+      - key: EMAIL_WEBHOOK_SECRET
+        sync: false
+      - key: ENABLE_PUBLIC_SELF_SERVE_CHECKOUT
+        value: "false"
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_MESSAGING_SERVICE_SID
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_ACCESS_TOKEN
+        sync: false
+      - key: GOOGLE_ACCOUNT_ID
+        sync: false
+      - key: GOOGLE_LOCATION_ID
+        sync: false
+
+databases:
+  - name: local-growth-os-db
+    databaseName: local_growth_os
+    user: local_growth_os
+    plan: free
