@@ -13,7 +13,7 @@
   "homepage": "https://github.com/dengfzj/17-hour-agent-startup#readme",
   "type": "module",
   "scripts": {
-    "api": "tsx server/index.ts",
+    "api": "tsx server/index.ts --api-only",
     "dev": "vite",
     "dev:full": "concurrently \"npm run api\" \"npm run dev\"",
     "build": "tsc -b && vite build",

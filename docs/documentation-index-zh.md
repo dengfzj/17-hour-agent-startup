@@ -1,6 +1,11 @@
 # 文档索引
 
 记录日期：2026-06-11
+更新日期：2026-06-14
+
+## 更新说明
+
+- 2026-06-14 API-only 本地开发模式与中英文 UI 更新：`docs/update-2026-06-14-zh.md`
 
 ## 正式交付文档
 
@@ -31,6 +36,7 @@
 - `docs/revenue-ops-playbook-en.md`
 - `docs/database-schema-en.md`
 - `docs/completion-audit-en.md`
+- `docs/update-2026-06-14-en.md`
 
 ## 原始工程附件
 

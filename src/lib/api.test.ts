@@ -41,7 +41,7 @@ describe('API client auth token provider', () => {
 
     await getRevenueCommand()
 
-    expect(calls).toEqual([{ url: 'http://localhost:8787/api/revenue-command', authorization: 'Bearer jwt-test-token' }])
+    expect(calls).toEqual([{ url: '/api/revenue-command', authorization: 'Bearer jwt-test-token' }])
   })
 
   it('keeps public catalog reads working without a registered token provider', async () => {

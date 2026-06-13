@@ -1,6 +1,11 @@
 # Documentation Index
 
 Recorded on: 2026-06-11
+Updated on: 2026-06-14
+
+## Update Notes
+
+- 2026-06-14 API-only local development and bilingual UI update: `docs/update-2026-06-14-en.md`
 
 ## Formal Delivery Documents
 
@@ -31,6 +36,7 @@ Each formal delivery document has a Chinese counterpart:
 - `docs/revenue-ops-playbook-zh.md`
 - `docs/database-schema-zh.md`
 - `docs/completion-audit-zh.md`
+- `docs/update-2026-06-14-zh.md`
 
 ## Raw Engineering Attachments
 

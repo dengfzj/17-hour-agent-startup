@@ -4,6 +4,7 @@ import {
   ClipboardCheck,
   Download,
   FileText,
+  Languages,
   Megaphone,
   Milestone,
   RefreshCcw,
@@ -11,8 +12,10 @@ import {
   Star,
 } from 'lucide-react'
 import { clsx } from 'clsx'
+import { useEffect, useState } from 'react'
 import { useWorkspaceStore } from '../store/workspace'
 import { formatCurrency } from '../domain/engines'
+import { languageStorageKey, readInitialLanguage, useRuntimeLocalization, type UiLanguage } from '../lib/i18n'
 import { BidFlowView } from './BidFlowView'
 import { BuyView } from './BuyView'
 import { LaunchView } from './LaunchView'
@@ -31,6 +34,7 @@ const navItems = [
 ] as const
 
 export function AppShell() {
+  const [language, setLanguage] = useState<UiLanguage>(readInitialLanguage)
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
   const isPublicBuy = pathname === '/buy'
   const legalPageKey = pathname.startsWith('/legal/') ? decodeURIComponent(pathname.split('/').filter(Boolean)[1] ?? '') : undefined
@@ -57,24 +61,50 @@ export function AppShell() {
   const reviewRisk = reviews.filter((review) => review.riskScore >= 50).length
   const projectedCampaignRevenue = campaigns.reduce((sum, campaign) => sum + campaign.projectedRevenue, 0)
 
+  useRuntimeLocalization(language)
+
+  useEffect(() => {
+    window.localStorage.setItem(languageStorageKey, language)
+  }, [language])
+
+  const toggleLanguage = () => setLanguage((current) => (current === 'zh' ? 'en' : 'zh'))
+
   if (isPublicBuy) {
-    return <BuyView />
+    return (
+      <>
+        <LanguageToggle language={language} onToggle={toggleLanguage} publicMode />
+        <BuyView />
+      </>
+    )
   }
 
   if (legalPageKey) {
-    return <LegalView pageKey={legalPageKey} />
+    return (
+      <>
+        <LanguageToggle language={language} onToggle={toggleLanguage} publicMode />
+        <LegalView pageKey={legalPageKey} />
+      </>
+    )
   }
 
   if (publicOnboardingToken) {
     return (
-      <main className="public-onboarding-shell">
-        <OnboardingView accessToken={publicOnboardingToken} />
-      </main>
+      <>
+        <LanguageToggle language={language} onToggle={toggleLanguage} publicMode />
+        <main className="public-onboarding-shell">
+          <OnboardingView accessToken={publicOnboardingToken} />
+        </main>
+      </>
     )
   }
 
   if (publicRecoveryToken) {
-    return <RecoveryLinkView token={publicRecoveryToken} />
+    return (
+      <>
+        <LanguageToggle language={language} onToggle={toggleLanguage} publicMode />
+        <RecoveryLinkView token={publicRecoveryToken} />
+      </>
+    )
   }
 
   return (
@@ -122,6 +152,7 @@ export function AppShell() {
             <h2>Revenue operations cockpit</h2>
           </div>
           <div className="topbar-actions">
+            <LanguageToggle language={language} onToggle={toggleLanguage} />
             <button type="button" className="icon-button" onClick={exportData} title="Export workspace JSON">
               <Download size={18} />
             </button>
@@ -145,6 +176,32 @@ export function AppShell() {
         {activeProduct === 'launch' && <LaunchView />}
       </main>
     </div>
+  )
+}
+
+function LanguageToggle({
+  language,
+  onToggle,
+  publicMode = false,
+}: {
+  language: UiLanguage
+  onToggle: () => void
+  publicMode?: boolean
+}) {
+  const nextLabel = language === 'zh' ? 'EN' : '中文'
+  const title = language === 'zh' ? 'Switch to English' : 'Switch to Chinese'
+
+  return (
+    <button
+      type="button"
+      className={clsx('language-toggle', publicMode && 'public-language-toggle')}
+      onClick={onToggle}
+      title={title}
+      aria-label={title}
+    >
+      <Languages size={16} />
+      <span>{nextLabel}</span>
+    </button>
   )
 }
 

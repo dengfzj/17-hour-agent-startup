@@ -41,7 +41,7 @@ export type BillingPlan = {
   stripePriceEnv: string
 }
 
-const apiBase = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? 'http://localhost:8787' : '')
+const apiBase = import.meta.env.VITE_API_BASE_URL ?? ''
 type ApiTokenProvider = () => string | undefined | Promise<string | undefined>
 let apiTokenProvider: ApiTokenProvider | undefined
 

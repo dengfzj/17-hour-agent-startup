@@ -73,6 +73,7 @@ AI 最终产出了：
 - Onboarding 页面；
 - Recovery 页面；
 - Legal 页面；
+- 应用内中英文全局切换；
 - Stripe Checkout / Webhook 相关边界；
 - 订单表；
 - 交付证据；
@@ -83,19 +84,19 @@ AI 最终产出了：
 - 中英文交付文档；
 - 工作日志和审计说明。
 
-文档中记录的最终质量门禁包括：
+当前快照的质量门禁是：
 
 ```bash
 npm run lint
-npx tsc --noEmit --pretty false
+npm test
 npm run build
-npm test -- --run --reporter=dot
 ```
 
-文档中记录的最终测试结果是：
+最新本地验证结果是：
 
-- 17 个测试文件通过；
-- 132 个测试通过。
+- 18 个测试文件通过；
+- 135 个测试通过；
+- 生产构建通过。
 
 ## 它没有做什么
 
@@ -226,23 +227,18 @@ npm install
 npm run dev:full
 ```
 
+这会启动两个本地服务：
+
+- 前端：`http://127.0.0.1:5173`
+- API 健康检查：`http://127.0.0.1:8787/api/health`
+
+本地开发时，`npm run api` 会以 API-only 模式运行。直接打开 `http://127.0.0.1:8787/` 返回 API 404 页面是预期行为，不再表示前端入口。查看 UI 请使用 `5173`。
+
 也可以分别启动：
 
 ```bash
-npm run dev
 npm run api
-```
-
-前端默认地址：
-
-```text
-http://127.0.0.1:5173
-```
-
-API 默认地址：
-
-```text
-http://127.0.0.1:8787
+npm run dev
 ```
 
 生产风格单服务运行：
@@ -251,6 +247,10 @@ http://127.0.0.1:8787
 npm run build
 npm run start
 ```
+
+生产风格模式下，后端会从 `dist/` 托管已构建的前端，并在同一个服务上暴露 API。
+
+应用内已支持全局中英文切换。语言偏好保存在浏览器本地，不会改写用户输入的业务数据、CSV 内容、邮箱、URL 或数字金额。
 
 ## 环境变量
 
@@ -279,6 +279,7 @@ npm run stripe:bootstrap
 
 ## 文档
 
+- [2026-06-14 更新说明](./docs/update-2026-06-14-zh.md)
 - [产品手册](./docs/product-manual-zh.md)
 - [真实上线计划](./docs/real-world-launch-plan-zh.md)
 - [启动 Runbook](./docs/launch-runbook-zh.md)

@@ -141,6 +141,7 @@ h3 {
 
 .nav-button,
 .icon-button,
+.language-toggle,
 .primary-button,
 .secondary-button {
   display: inline-flex;
@@ -435,6 +436,27 @@ h3 {
   border-color: var(--line);
 }
 
+.language-toggle {
+  gap: 7px;
+  min-width: 76px;
+  padding: 0 12px;
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.public-language-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  min-width: 78px;
+  box-shadow: 0 10px 30px rgba(22, 32, 30, 0.12);
+}
+
 .primary-button,
 .secondary-button {
   gap: 8px;
@@ -455,7 +477,8 @@ h3 {
 
 .primary-button:hover,
 .secondary-button:hover,
-.icon-button:hover {
+.icon-button:hover,
+.language-toggle:hover {
   transform: translateY(-1px);
 }
 

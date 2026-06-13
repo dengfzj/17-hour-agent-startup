@@ -77,6 +77,7 @@ The AI produced:
 - Onboarding page;
 - Recovery page;
 - Legal pages;
+- runtime Chinese/English UI switching;
 - Stripe Checkout / Webhook boundaries;
 - paid pilot order forms;
 - delivery evidence;
@@ -87,19 +88,19 @@ The AI produced:
 - bilingual documentation;
 - work logs and audit notes.
 
-The recorded quality gates were:
+The current quality gates for this snapshot are:
 
 ```bash
 npm run lint
-npx tsc --noEmit --pretty false
+npm test
 npm run build
-npm test -- --run --reporter=dot
 ```
 
-The final documented test result was:
+Latest local validation result:
 
-- 17 test files passed;
-- 132 tests passed.
+- 18 test files passed;
+- 135 tests passed;
+- production build passed.
 
 ## What It Did Not Do
 
@@ -231,23 +232,18 @@ Run frontend and API together:
 npm run dev:full
 ```
 
-You can also run them separately:
+This starts two local services:
+
+- Frontend: `http://127.0.0.1:5173`
+- API health check: `http://127.0.0.1:8787/api/health`
+
+In local development, `npm run api` is intentionally API-only. Opening `http://127.0.0.1:8787/` directly is expected to return an API 404 page instead of the frontend. Use `5173` for the UI.
+
+You can also run the two services separately:
 
 ```bash
-npm run dev
 npm run api
-```
-
-Frontend:
-
-```text
-http://127.0.0.1:5173
-```
-
-API:
-
-```text
-http://127.0.0.1:8787
+npm run dev
 ```
 
 Production-style single service:
@@ -256,6 +252,10 @@ Production-style single service:
 npm run build
 npm run start
 ```
+
+In production-style mode, the backend serves the built frontend from `dist/` and exposes the API from the same service.
+
+The app includes a global Chinese/English toggle. Language preference is stored locally in the browser and does not rewrite user-entered business data, CSV contents, emails, URLs, or numeric values.
 
 ## Environment
 
@@ -284,6 +284,7 @@ Passing these checks does not mean the product has made money. It only means the
 
 ## Documentation
 
+- [2026-06-14 update note](./docs/update-2026-06-14-en.md)
 - [Product manual](./docs/product-manual-en.md)
 - [Real-world launch plan](./docs/real-world-launch-plan-en.md)
 - [Launch runbook](./docs/launch-runbook-en.md)

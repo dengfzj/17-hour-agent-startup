@@ -15,4 +15,15 @@ This is published as an AI-agent long-task field record, not as a validated SaaS
 
 中文说明见 [README.zh-CN.md](./README.zh-CN.md). English documentation is available in [README.en.md](./README.en.md).
 
+Latest update notes: [中文](./docs/update-2026-06-14-zh.md) | [English](./docs/update-2026-06-14-en.md).
+
+Quick local start:
+
+```bash
+npm install
+npm run dev:full
+```
+
+Open the UI at `http://127.0.0.1:5173`. Check the API at `http://127.0.0.1:8787/api/health`.
+
 License: [MIT](./LICENSE)
